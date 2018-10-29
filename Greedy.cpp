@@ -8,37 +8,12 @@
 
 #include "Greedy.h"
 
+void Greedy::operator()(Instance& Ins, Result& Res){
+	Res.PrepareForProcessing(Ins);
 
-Greedy::Greedy(Instance Ins){
-    CoreNum=Ins.getNumProcessors();
-    Cores = new Core[CoreNum];
-    CoreWithShortestTime=&Cores[0];
-    Tasks=Ins.tasks;
-    TasksNum=Ins.getNumTasks();
-}
+    for (int i=0; i<Ins.numTasks; i++)
+    	Res.findshortest(Ins).addtask(Ins.tasks[i]);
 
-
-void Greedy::dogreedstaff(){
-    for (int i=0; i<TasksNum; i++)
-    {CoreWithShortestTime->addtask(Tasks[i]);
-        this->findshortest();
-    }
-    int max=0;
-    for (int i=0; i<CoreNum;i++){
-        Cores[i].showyourself();
-        if (Cores[i].gettime()>max) max=Cores[i].gettime();
-    }
-    std::cout<<"Total time: "<<max<<"\n";
-}
-
-
-void Greedy::findshortest(){
-    int min=Cores[0].gettime();
-    CoreWithShortestTime=&Cores[0];
-    for (int i=0; i<CoreNum;i++){
-        if (Cores[i].gettime()<min){
-            min=Cores[i].gettime();
-            CoreWithShortestTime=&Cores[i];
-        }
-    }
+	Res.calcmax();
+    Res.showyourself();
 }

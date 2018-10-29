@@ -14,6 +14,8 @@ public:
 	int getLength() const { return length; }
 	friend ostream& operator<<(ostream&, const Task&);
 	friend istream& operator>>(istream&, Task&);
+
+	bool operator<(Task& other){ return length < other.length; }
 };
 
 

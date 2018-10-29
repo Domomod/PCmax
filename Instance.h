@@ -12,6 +12,7 @@ class Instance {
 	friend ostream& operator<< (ostream&, Instance&);
 	friend class LoadingInstance;
 	friend class Greedy;
+	friend class LongestProcessingTimeFirst;
 private:
 	Tasks tasks;
 	int numProcessors;

@@ -11,20 +11,17 @@
 
 #include <stdio.h>
 #include "Core.h"
+#include "Result.h"
 #include "Instance.h"
-class Greedy{
+#include "AbstractAlgorithm.h"
+class Greedy : public AbstractAlgorithm{
 private:
-    Core *Cores; //i tak raczej w trakcie nie zmienimy ich ilości
-    Core *CoreWithShortestTime;
-    std::vector<Task> Tasks;
-    int CoreNum;
-    int MaxTime;
-    int TasksNum;
+protected:
 public:
-    Greedy(Instance Ins);
-    ~Greedy(){};
-    void findshortest();
-    void dogreedstaff();
+    Greedy()=default;
+    virtual ~Greedy(){};
+
+    void operator()(Instance&, Result&);
 };
 
 

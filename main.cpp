@@ -8,23 +8,32 @@
 
 
 #include <iostream>
+#include <fstream>
+
 #include "Instance.h"
 #include "LoadingInstance.h"
 #include "Core.h"
+#include "Result.h"
 #include "Greedy.h"
+#include "LPTF.h"
 
 
 int main(){
-    Instance instance(4, {30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40});
-    std::cout << instance;
-    
+    Instance instance;
+	Result result;
     LoadingInstance loadInstance;
-    
-    //loadInstance.Build(instance);
-    //std::cout << instance;
-    Greedy greed(instance);
+    std::ifstream file("Instances/Instance1");
+    Greedy greedyAlgorithm;
+	LongestProcessingTimeFirst lptf;
+	
+	loadInstance.SetSource(file);
+    loadInstance.Build(instance);
+    std::cout << instance;
 
-    greed.dogreedstaff();
+	std::cout<<"\n\nGreedy Algorithm:\n\n";
+    greedyAlgorithm(instance,result);
+	std::cout<<"\n\nLongest Processing Time First Algorithm:\n\n";
+	lptf(instance,result);
     
     return 0;
 }

@@ -24,6 +24,8 @@ public:
     void removetask(Task task);
     int gettime(){return CurrentTime;};
     void showyourself();
+
+	bool operator<(Core& other){return CurrentTime<other.CurrentTime;};
 };
 
 
