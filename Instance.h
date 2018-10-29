@@ -11,6 +11,7 @@ typedef std::vector<Task> Tasks;
 class Instance {
 	friend ostream& operator<< (ostream&, Instance&);
 	friend class LoadingInstance;
+	friend class Greedy;
 private:
 	Tasks tasks;
 	int numProcessors;

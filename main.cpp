@@ -8,10 +8,10 @@
 
 
 #include <iostream>
-#include "Instance.hpp"
-#include "LoadingInstance.hpp"
-#include "Core.hpp"
-#include "Greedy.hpp"
+#include "Instance.h"
+#include "LoadingInstance.h"
+#include "Core.h"
+#include "Greedy.h"
 
 
 int main(){
