@@ -3,6 +3,8 @@
 #include <vector>
 	using std::vector;
 #include "Task.h"
+
+//Write any kind of Vector
 template <typename T> 
 ostream& operator<<(ostream& os, const vector<T>& v) 
 { 

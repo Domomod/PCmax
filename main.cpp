@@ -19,6 +19,7 @@
 
 
 int main(){
+	//Create needed objects
     Instance instance;
 	Result result;
     LoadingInstance loadInstance;
@@ -26,10 +27,12 @@ int main(){
     Greedy greedyAlgorithm;
 	LongestProcessingTimeFirst lptf;
 	
+	//Load data
 	loadInstance.SetSource(file);
     loadInstance.Build(instance);
     std::cout << instance;
 
+	//Process data
 	std::cout<<"\n\nGreedy Algorithm:\n\n";
     greedyAlgorithm(instance,result);
 	std::cout<<"\n\nLongest Processing Time First Algorithm:\n\n";
