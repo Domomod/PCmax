@@ -1,11 +1,21 @@
 #include "Result.h"
 
-void Result::PrepareForProcessing(Instance& Ins){
+void Result::Clear(){
 	if(!Cores.empty())
 		Cores.clear();
 	max = 0;
-	//Clear content if *this was already processed, vector actual capacity might not change
+}
+
+void Result::Resize(int n){
 	Cores.resize(Ins.getNumProcessors(), Core());
+}
+
+void Result::PrepareForInstance(Instance& Ins){
+	//Clear content if *this was already processed, vector actual capacity might not change
+	Clear();
+	
+	//Set vector actual capacity to be able to store all Cores
+	Resize(Ins.getNumProcessors());
 };
 
 Core& Result::findshortest(Instance& Ins){

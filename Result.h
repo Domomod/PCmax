@@ -15,7 +15,9 @@ private:
 protected:
 public:
 	Result():max(0){};
-	void PrepareForProcessing(Instance&);
+	void Clear();
+	void Resize(int n);
+	void PrepareForInstance(Instance&);
 	Core& findshortest(Instance&);
 	void calcmax();
 	void showyourself();

@@ -9,9 +9,13 @@
 
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
+	using std::rand;
+#include <ctime>
 
 #include "Instance.h"
 #include "LoadingInstance.h"
+#include "GeneratingInstance.h"
 #include "Core.h"
 #include "Result.h"
 #include "Greedy.h"
@@ -19,17 +23,17 @@
 
 
 int main(){
+	//Seed for srand
+	srand( time (NULL) );
 	//Create needed objects
     Instance instance;
 	Result result;
-    LoadingInstance loadInstance;
-    std::ifstream file("Instances/Instance1");
+    GeneratingInstance genInstance;
     Greedy greedyAlgorithm;
 	LongestProcessingTimeFirst lptf;
 	
 	//Load data
-	loadInstance.SetSource(file);
-    loadInstance.Build(instance);
+    genInstance.Build(instance);
     std::cout << instance;
 
 	//Process data

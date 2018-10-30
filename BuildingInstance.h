@@ -8,7 +8,7 @@ private:
 protected:
 public:
 	virtual void Build(Instance&) = 0;
-	virtual ~BuildingInstance() = 0;
+	virtual ~BuildingInstance(){};
 };
 
 #endif

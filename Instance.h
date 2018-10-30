@@ -6,11 +6,16 @@
 	using std::ostream;
 #include "Task.h"
 
+/*
+This class represents an Instace of PCmax problem. Tasks are stored in a vector. Class is befriended with other classes resposible for it processing.
+*/
+
 typedef std::vector<Task> Tasks;
 
 class Instance {
 	friend ostream& operator<< (ostream&, Instance&);
 	friend class LoadingInstance;
+	friend class GeneratingInstance;
 	friend class Greedy;
 	friend class LongestProcessingTimeFirst;
 private:
@@ -24,6 +29,7 @@ public:
 		for(auto task : _tasks)
 			tasks.push_back(task);
 	}
+	//You can initialize Instance in such a manner Instance(x,{a,b,c,d,e,f}), where x is number of Processors, and {a,b,c,d,e,f} is a list of Tasks
 	void addTask(Task);
 
 	int getNumProcessors() const { return numProcessors; }

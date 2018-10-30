@@ -13,20 +13,24 @@
 #include <vector>
 #include "Task.h"
 
+/*
+A Core stores it's processing time and vector of Tasks
+*/
+
 class Core{
 private:
-    int CurrentTime;
+    int CurrentProcessingTime;
     std::vector<Task> MyTasks;
 public:
-    Core(){CurrentTime=0;};
+    Core(){CurrentProcessingTime=0;};
     ~Core(){};
 
     void addtask(Task task);
     void removetask(Task task);
-    int gettime() const {return CurrentTime;};
+    int gettime() const {return CurrentProcessingTime;};
     void showyourself();
 
-	bool operator<(Core& other){return CurrentTime<other.CurrentTime;};
+	bool operator<(Core& other){return CurrentProcessingTime<other.CurrentProcessingTime;};
 };
 
 

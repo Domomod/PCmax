@@ -9,8 +9,10 @@
 #include "Greedy.h"
 
 void Greedy::operator()(Instance& Ins, Result& Res){
-	Res.PrepareForProcessing(Ins);
+	//Prepare instace for processing, aka. clear previous Result
+	Res.PrepareForInstance(Ins);
 
+	//Load task to least overworked Core
     for (int i=0; i<Ins.numTasks; i++)
     	Res.findshortest(Ins).addtask(Ins.tasks[i]);
 
