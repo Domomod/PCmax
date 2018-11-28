@@ -8,6 +8,6 @@ void LoadingInstance::Build(Instance& instance){
 	int val = 0;
 	for(int i = 0; i < instance.numTasks; i++){
 		(*in) >> val;
-		instance.tasks.push_back(Task(val));
+		instance.tasks.push_back(Task(val, i));
 	}
 }
