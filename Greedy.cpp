@@ -17,5 +17,6 @@ void Greedy::operator()(Instance& Ins, Result& Res){
     	Res.findshortest(Ins).addtask(Ins.tasks[i]);
 
 	Res.calcmax();
+	Res.numerOfTasks = Ins.getNumTasks();
     Res.showyourself();
 }

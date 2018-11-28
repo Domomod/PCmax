@@ -9,9 +9,11 @@
 
 class Result{
 	friend class Greedy;
+	friend class LPTF;
 private:
 	vector<Core> Cores;
 	int max;
+	int numerOfTasks;
 protected:
 public:
 	Result():max(0){};
