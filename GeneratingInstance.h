@@ -2,6 +2,7 @@
 #define GENERATING_INSTANCE_H
 
 #include <cstdlib>
+#include <algorithm>
 
 #include "BuildingInstance.h"
 #include "Instance.h"

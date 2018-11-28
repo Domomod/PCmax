@@ -12,10 +12,10 @@
 #include "Utility.h"
 
 void Core::showyourself(){
-    std::cout<<CurrentTime<<" [units of time] were used for "<<MyTasks;
+    std::cout<<CurrentProcessingTime<<" [units of time] were used for "<<MyTasks;
 }
 
 void Core::addtask(Task task){
-    CurrentTime+=task.getLength();
+    CurrentProcessingTime+=task.getLength();
     MyTasks.push_back(task);
 }

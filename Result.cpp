@@ -7,7 +7,7 @@ void Result::Clear(){
 }
 
 void Result::Resize(int n){
-	Cores.resize(Ins.getNumProcessors(), Core());
+	Cores.resize(n, Core());
 }
 
 void Result::PrepareForInstance(Instance& Ins){
