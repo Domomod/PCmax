@@ -2,7 +2,7 @@
 
 void GeneratingInstance::Build(Instance& instance){
 	int numberOfCores = rand() % 97 + 3;
-	int numberOfTaks = 0;
+	int numberOfTaksSoFar = 0;
 	int optimalProcessingTime = numberOfCores * (rand() %40 + 10);
 	//Randomly generate Instance's optimum
 
@@ -15,8 +15,8 @@ void GeneratingInstance::Build(Instance& instance){
 			//Check if newTaskLength does not overload core (aka does not increase optimal processing time), if so trim new TaskLength, so it fits
 				newTaskLength = optimalProcessingTime - coreLengthSoFar;
 
-			instance.tasks.push_back(Task(newTaskLength));
-			numberOfTaks++;
+			instance.tasks.push_back(Task(newTaskLength, numberOfTaksSoFar));
+			numberOfTaksSoFar++;
 			coreLengthSoFar += newTaskLength;
 		}
 	}
@@ -25,5 +25,5 @@ void GeneratingInstance::Build(Instance& instance){
 	//reshuffle for even more random result
 	
 	instance.numProcessors = numberOfCores;
-	instance.numTasks = numberOfTaks;
+	instance.numTasks = numberOfTaksSoFar;
 }
