@@ -24,5 +24,11 @@ void GeneratingInstance::Build(Instance& instance){
 	std::random_shuffle(instance.tasks.begin(), instance.tasks.end());
 	//reshuffle for even more random result
 	
+	int i = 0;
+	for(auto& task : instance.tasks){
+		task.setId(i);
+		i++;
+	}
+
 	instance.numProcessors = numberOfCores;
 }

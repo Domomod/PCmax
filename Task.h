@@ -14,6 +14,9 @@ public:
 	Task(int _len, int _id=0) : length (_len), id(_id)  {}
 	int getLength() const { return length; }
 	int getId() const { return id; }
+
+	void setId(int x) { id = x;}
+
 	friend ostream& operator<<(ostream&, const Task&);
 	friend istream& operator>>(istream&, Task&);
 

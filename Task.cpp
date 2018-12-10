@@ -2,7 +2,7 @@
 
 
 ostream& operator<<(ostream& out, const Task& task){ 
-	out << task.length; 
+	out << "(" << task.length << ", " << task.id <<")"; 
 	return out; 
 }
 
