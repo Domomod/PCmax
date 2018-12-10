@@ -13,18 +13,16 @@ private:
 	vector<int> coresAsignedToTasks;
 protected:
 public:
-	Individual(int size){
+	Individual(int size=0){
 		coresAsignedToTasks.resize(size);
 	}
-	Individual(std::initializer_list<int> coreIds){
-		for( auto coreId : coreIds ){
-			coresAsignedToTasks.push_back(coreId);
-		}
-	}
+
 	Individual(Result& result);
 
 	Individual makeOffspring(Individual& other);
 	static Individual makeRandom(int numberOfTasks, int numberOfCores);
+
+	void mutate();
 
 	int valueFunction(Instance& myInstance);
 

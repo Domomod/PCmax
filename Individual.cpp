@@ -25,7 +25,7 @@ Individual::Individual(Result& result){
 
 Individual Individual::makeOffspring(Individual& other){
 	Individual* individuals[2] = {this, &other};
-	Individual offspring(coresAsignedToTasks.size());
+	Individual offspring;
 
 	int numerOfTaks = coresAsignedToTasks.size();
 	int startToUseOtherIndividualIdx = rand()%numerOfTaks;
@@ -35,10 +35,10 @@ Individual Individual::makeOffspring(Individual& other){
 
 	for(int i = 0; i < coresAsignedToTasks.size(); i++){
 		if(i < startToUseOtherIndividualIdx || i > endToUseOtherIndividualIdx){
-			offspring.coresAsignedToTasks.at(i) = this->coresAsignedToTasks.at(i);
+			offspring.coresAsignedToTasks.push_back( this->coresAsignedToTasks.at(i) );
 		}
 		else{
-			offspring.coresAsignedToTasks.at(i) = other.coresAsignedToTasks.at(i);
+			offspring.coresAsignedToTasks.push_back( other.coresAsignedToTasks.at(i) );
 		}
 	}
 	return offspring;
@@ -51,6 +51,15 @@ Individual Individual::makeRandom(int numberOfTasks, int numerOfCores){
 		outcome.coresAsignedToTasks.at(i) = randomCore;
 	}
 	return outcome;
+}
+
+void Individual::mutate(){
+	int numberOfTasks = coresAsignedToTasks.size();
+	for(int i = 0; i < rand() % 20; i++){
+	int a = rand() % numberOfTasks;
+	int b = rand() % numberOfTasks;
+	std::swap( coresAsignedToTasks[a], coresAsignedToTasks[b] );
+	}
 }
 
 int Individual::valueFunction(Instance& myInstance){
