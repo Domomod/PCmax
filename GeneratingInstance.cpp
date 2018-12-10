@@ -25,5 +25,4 @@ void GeneratingInstance::Build(Instance& instance){
 	//reshuffle for even more random result
 	
 	instance.numProcessors = numberOfCores;
-	instance.numTasks = numberOfTaksSoFar;
 }

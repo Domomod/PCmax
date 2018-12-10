@@ -21,19 +21,20 @@ class Instance {
 private:
 	Tasks tasks;
 	int numProcessors;
-	int numTasks;
 protected:
 public:
 	Instance() = default;
-	Instance(int P, std::initializer_list<int> _tasks) : numProcessors(P), numTasks(_tasks.size()) {
+	Instance(int P, std::initializer_list<int> _tasks) : numProcessors(P)
+	 {
 		for(auto task : _tasks)
 			tasks.push_back(task);
 	}
 	//You can initialize Instance in such a manner Instance(x,{a,b,c,d,e,f}), where x is number of Processors, and {a,b,c,d,e,f} is a list of Tasks
 	void addTask(Task);
 
+	int getNthTaskLength(int n) { return tasks.at(n).getLength(); }
 	int getNumProcessors() const { return numProcessors; }
-	int getNumTasks() const { return numTasks; }
+	int getNumTasks() const { return tasks.size(); }
 };
 
 #endif

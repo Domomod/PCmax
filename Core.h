@@ -28,6 +28,7 @@ public:
     void addtask(Task task);
     void removetask(Task task);
     int gettime() const {return CurrentProcessingTime;};
+	const std::vector<Task>& getTasks() const { return MyTasks; } 
     void showyourself();
 
 	bool operator<(Core& other){return CurrentProcessingTime<other.CurrentProcessingTime;};

@@ -13,10 +13,9 @@ void Greedy::operator()(Instance& Ins, Result& Res){
 	Res.PrepareForInstance(Ins);
 
 	//Load task to least overworked Core
-    for (int i=0; i<Ins.numTasks; i++)
+    for (int i=0; i<Ins.getNumTasks(); i++)
     	Res.findshortest(Ins).addtask(Ins.tasks[i]);
 
 	Res.calcmax();
 	Res.numerOfTasks = Ins.getNumTasks();
-    Res.showyourself();
 }

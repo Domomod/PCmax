@@ -20,27 +20,37 @@
 #include "Result.h"
 #include "Greedy.h"
 #include "LPTF.h"
-
+#include "Individual.h"
 
 int main(){
 	//Seed for srand
 	srand( time (NULL) );
 	//Create needed objects
     Instance instance;
-	Result result;
+	Result result1, result2;
     GeneratingInstance genInstance;
     Greedy greedyAlgorithm;
 	LongestProcessingTimeFirst lptf;
-	
+
 	//Load data
     genInstance.Build(instance);
     std::cout << instance;
 
 	//Process data
 	std::cout<<"\n\nGreedy Algorithm:\n\n";
-    greedyAlgorithm(instance,result);
+    greedyAlgorithm(instance,result1);
 	std::cout<<"\n\nLongest Processing Time First Algorithm:\n\n";
-	lptf(instance,result);
+	lptf(instance,result2);
+
+	//Individual;
+	Individual individual1(result1);
+	Individual individual2(result2);
+
+	std::cout << individual1.valueFunction(instance) << "\n";
+	std::cout << individual2.valueFunction(instance) << "\n";
+
+	Individual individual3 = individual1.makeOffspring(individual2);
+	std::cout << individual3.valueFunction(instance) << "\n";
     
     return 0;
 }

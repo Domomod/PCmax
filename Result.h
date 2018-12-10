@@ -10,6 +10,7 @@
 class Result{
 	friend class Greedy;
 	friend class LPTF;
+	friend class Individual;
 private:
 	vector<Core> Cores;
 	int max;
@@ -25,6 +26,7 @@ public:
 	void showyourself();
 
 	int getMax () const { return max; }
+	int getNumberOfTasks () const { return numerOfTasks; }
 };
 
 #endif

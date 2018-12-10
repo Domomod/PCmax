@@ -7,6 +7,6 @@ void Instance::addTask(Task newTask){
 
 ostream& operator<< (ostream& out, Instance& instance ){
 	out << "Number of Processors: " << instance.numProcessors 
-		<< "\tNumber of Tasks: " << instance.numTasks
+		<< "\tNumber of Tasks: " << instance.getNumTasks()
 		<< "\n" << instance.tasks;
 }
