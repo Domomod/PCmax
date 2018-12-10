@@ -44,6 +44,15 @@ Individual Individual::makeOffspring(Individual& other){
 	return offspring;
 }
 
+Individual Individual::makeRandom(int numberOfTasks, int numerOfCores){
+	Individual outcome(numberOfTasks);
+	for(int i = 0; i < numberOfTasks; i++){
+		int randomCore = rand() % numerOfCores;
+		outcome.coresAsignedToTasks.at(i) = randomCore;
+	}
+	return outcome;
+}
+
 int Individual::valueFunction(Instance& myInstance){
 	vector<int> Cores(myInstance.getNumProcessors(),0);
 	int i = 0;

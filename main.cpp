@@ -51,7 +51,9 @@ int main(){
 
 	Individual individual3 = individual1.makeOffspring(individual2);
 	std::cout << individual3.valueFunction(instance) << "\n";
-    
+	Individual individual4 = Individual::makeRandom(instance.getNumTasks(), instance.getNumProcessors());
+    std::cout << individual4.valueFunction(instance) << "\n";
+
     return 0;
 }
 

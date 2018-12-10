@@ -24,6 +24,7 @@ public:
 	Individual(Result& result);
 
 	Individual makeOffspring(Individual& other);
+	static Individual makeRandom(int numberOfTasks, int numberOfCores);
 
 	int valueFunction(Instance& myInstance);
 
