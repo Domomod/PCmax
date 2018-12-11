@@ -63,7 +63,7 @@ void GeneticAlgorithm::initializePopulation(std::shared_ptr<Instance> instance){
 		population->push_back(Individual::makeRandom(instance));
 	}
 
-	Result result;
+	Result result(instance);
 	LongestProcessingTimeFirst lptf;
 	Greedy greedy;
 	lptf(instance, result);

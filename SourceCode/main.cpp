@@ -28,7 +28,7 @@ int main(){
 	srand( time (NULL) );
 	//Create needed objects
 	auto instance = std::make_shared<Instance>( Instance() );
-	Result result;
+	Result result(instance);
 	Greedy lptf;
     LoadingInstance loadInstance;
 

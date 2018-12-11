@@ -14,21 +14,28 @@ class Result{
 	friend class Individual;
 private:
 	vector<Core> Cores;
+	std::shared_ptr<Instance> usedInstance;
 	int max;
 	int numerOfTasks;
 protected:
 public:
-	Result():max(0){};
+	Result(std::shared_ptr<Instance> instance):max(0){
+	usedInstance = std::move(instance);
+	Resize(usedInstance->getNumProcessors());
+	}
 
 	void Clear();
 	void Resize(int n);
-	void PrepareForInstance(std::shared_ptr <Instance> instance);
 	Core &findshortest();
 	void calcmax();
 	void showyourself();
 
 	int getMax () const { return max; }
 	int getNumberOfTasks () const { return numerOfTasks; }
+
+	std::shared_ptr<Instance> getUsedInstance() const {
+		return usedInstance;
+	}
 };
 
 #endif

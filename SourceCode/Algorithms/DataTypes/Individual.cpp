@@ -10,6 +10,7 @@
 	using std::min;
 
 Individual::Individual(Result& result){
+	usedInstance = result.getUsedInstance();
 	int numberOfTasks = result.getNumberOfTasks();
 
 	coresAsignedToTasks.resize(numberOfTasks);

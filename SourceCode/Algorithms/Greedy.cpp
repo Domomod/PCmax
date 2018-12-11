@@ -10,7 +10,6 @@
 
 void Greedy::operator()(std::shared_ptr<Instance> instance, Result &result) {
 	//Prepare instace for processing, aka. clear previous Result
-	result.PrepareForInstance(instance);
 
 	//Load task to least overworked Core
     for (int i=0; i<instance->getNumTasks(); i++)
