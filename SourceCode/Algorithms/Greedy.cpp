@@ -16,5 +16,5 @@ void Greedy::operator()(std::shared_ptr<Instance> instance, Result &result) {
 		result.findshortest().addtask(instance->tasks[i]);
 
 	result.calcmax();
-	result.numerOfTasks = instance->getNumTasks();
+	result.numberOfTasks = instance->getNumTasks();
 }

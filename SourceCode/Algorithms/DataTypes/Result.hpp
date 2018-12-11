@@ -3,10 +3,14 @@
 
 #include "SourceCode/Domain/Core.hpp"
 #include "SourceCode/Domain/Instance.hpp"
+
 #include <vector>
 	using std::vector;
 #include <algorithm>
 #include <memory>
+
+//Forward declaration instead of include allows to avoid circular dependency
+class Individual;
 
 class Result{
 	friend class Greedy;
@@ -15,14 +19,13 @@ class Result{
 private:
 	vector<Core> Cores;
 	std::shared_ptr<Instance> usedInstance;
-	int max;
-	int numerOfTasks;
+	int longestProcessingTime;
+	int numberOfTasks;
 protected:
 public:
-	Result(std::shared_ptr<Instance> instance):max(0){
-	usedInstance = std::move(instance);
-	Resize(usedInstance->getNumProcessors());
-	}
+	Result(std::shared_ptr<Instance> instance);
+
+	Result(Individual individual);
 
 	void Clear();
 	void Resize(int n);
@@ -30,8 +33,8 @@ public:
 	void calcmax();
 	void showyourself();
 
-	int getMax () const { return max; }
-	int getNumberOfTasks () const { return numerOfTasks; }
+	int getMax () const { return longestProcessingTime; }
+	int getNumberOfTasks () const { return numberOfTasks; }
 
 	std::shared_ptr<Instance> getUsedInstance() const {
 		return usedInstance;

@@ -27,6 +27,17 @@ public:
 	int valueFunction(std::shared_ptr<Instance> myInstance);
 
 	friend ostream& operator<<(ostream& out, Individual individual);
+
+
+	/*Setters And Getters*/
+
+
+	const vector<int> &getCoresAsignedToTasks() const;
+
+	std::shared_ptr<Instance> getUsedInstance() const;
+
+	void setUsedInstance(const std::shared_ptr<Instance> &usedInstance);
+
 };
 
 #endif

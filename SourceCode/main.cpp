@@ -27,8 +27,6 @@ int main(){
 	//Seed for srand
 	srand( time (NULL) );
 	//Create needed objects
-	auto instance = std::make_shared<Instance>( Instance() );
-	Result result(instance);
 	Greedy lptf;
     LoadingInstance loadInstance;
 
@@ -36,13 +34,24 @@ int main(){
 
 	std::ifstream m50n1000("Instances/m50");
 
+	auto instance = std::make_shared<Instance>( Instance() );
+
 	//Load data
 	loadInstance.SetSource(m50n1000);
 	loadInstance.Build(*instance);
    	std::cout << *instance;
 
-	//lptf(instance, result);
-	//result.showyourself();
+	Result result(instance);
+
+	lptf(instance, result);
+
+	result.showyourself();
+
+	Individual test1 = (Individual) result;
+
+	Result result2 = (Result) test1;
+
+	result2.showyourself();
 
 	geneticAlgorithm(instance, result);
 

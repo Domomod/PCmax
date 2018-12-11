@@ -32,6 +32,7 @@ public:
 	//You can initialize Instance in such a manner Instance(x,{a,b,c,d,e,f}), where x is number of Processors, and {a,b,c,d,e,f} is a list of Tasks
 	void addTask(Task);
 
+	Task& getNthTask(int n) { return tasks.at(n); }
 	int getNthTaskLength(int n) { return tasks.at(n).getLength(); }
 	int getNumProcessors() const { return numProcessors; }
 	int getNumTasks() const { return tasks.size(); }

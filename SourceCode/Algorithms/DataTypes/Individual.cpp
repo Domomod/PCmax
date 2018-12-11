@@ -96,3 +96,15 @@ ostream& operator<<(ostream& out, Individual individual){
 	out << individual.coresAsignedToTasks;
 	return out;
 }
+
+const vector<int> &Individual::getCoresAsignedToTasks() const {
+	return coresAsignedToTasks;
+}
+
+std::shared_ptr<Instance> Individual::getUsedInstance() const {
+	return usedInstance;
+}
+
+void Individual::setUsedInstance(const std::shared_ptr<Instance> &usedInstance) {
+	Individual::usedInstance = usedInstance;
+}
