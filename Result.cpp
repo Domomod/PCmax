@@ -19,7 +19,7 @@ void Result::PrepareForInstance(Instance& Ins){
 };
 
 Core& Result::findshortest(Instance& Ins){
-	return *std::min_element(Cores.begin(), Cores.end());
+	return *std::min_element(Cores.begin(), Cores.end(), [](Core& a, Core& b){return a.gettime() < b.gettime();} );
 };
 
 void Result::calcmax(){
