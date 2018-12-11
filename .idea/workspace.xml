@@ -12,29 +12,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8259c494-6280-4b9e-9dd1-f1e18ef08d00" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AbstractAlgorithm.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/AbstractAlgorithm.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BuildingInstance.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/BuildingInstance.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Core.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Core.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneratingInstance.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/GeneratingInstance.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneratingInstance.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/GeneratingInstance.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticAlgorithm.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticAlgorithm.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GeneticAlgorithm.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/GeneticAlgorithm.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Greedy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Greedy.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Greedy.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Greedy.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Individual.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Individual.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Individual.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Individual.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Instance.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Instance.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Instance.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Instance.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LPTF.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/LPTF.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LPTF.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/LPTF.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoadingInstance.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/LoadingInstance.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LoadingInstance.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/LoadingInstance.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Result.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Result.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Result.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Result.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Task.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utility.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Utility.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -56,13 +33,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+            <state relative-caret-position="174">
+              <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
               <folding>
                 <element signature="e#119#138#0" expanded="true" />
+                <element signature="e#195#211#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,7 +99,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AbstractAlgorithm.cpp">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -143,7 +121,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/AbstractAlgorithm.hpp" />
         <option value="$PROJECT_DIR$/BuildingInstance.hpp" />
         <option value="$PROJECT_DIR$/Core.cpp" />
@@ -166,14 +143,15 @@
         <option value="$PROJECT_DIR$/Result.hpp" />
         <option value="$PROJECT_DIR$/Task.cpp" />
         <option value="$PROJECT_DIR$/Utility.hpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="77" />
-    <option name="y" value="47" />
-    <option name="width" value="1279" />
-    <option name="height" value="701" />
+    <option name="x" value="124" />
+    <option name="y" value="27" />
+    <option name="width" value="1161" />
+    <option name="height" value="647" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -196,6 +174,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -227,12 +206,12 @@
       <option name="presentableId" value="Default" />
       <updated>1544528926948</updated>
       <workItem from="1544528930722" duration="841000" />
-      <workItem from="1544533859801" duration="301000" />
+      <workItem from="1544533859801" duration="1284000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1142000" />
+    <option name="totallyTimeSpent" value="2125000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -245,20 +224,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="27" width="1299" height="741" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24980047" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3289256" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3289256" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289256" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.3289256" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.3289256" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.3289256" />
@@ -388,16 +366,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
-          <folding>
-            <element signature="e#119#138#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LPTF.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -448,6 +416,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AbstractAlgorithm.cpp">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+          <folding>
+            <element signature="e#119#138#0" expanded="true" />
+            <element signature="e#195#211#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="PCmax_GeneticAlgorithm"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/dominik/Studia/Semestr3/OK/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dominik/Studia/Semestr3/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dominik/Studia/Semestr3/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dominik/Studia/Semestr3/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dominik/Studia/Semestr3/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/dominik/Studia/Semestr3/OK/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dominik/Studia/Semestr3/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dominik/Studia/Semestr3/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dominik/Studia/Semestr3/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dominik/Studia/Semestr3/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PCmax_GeneticAlgorithm">
+				<Option output="/home/dominik/Studia/Semestr3/OK/cmake-build-debug/PCmax_GeneticAlgorithm" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/dominik/Studia/Semestr3/OK/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/dominik/Studia/Semestr3/OK/."/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dominik/Studia/Semestr3/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 PCmax_GeneticAlgorithm"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dominik/Studia/Semestr3/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dominik/Studia/Semestr3/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dominik/Studia/Semestr3/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PCmax_GeneticAlgorithm/fast">
+				<Option output="/home/dominik/Studia/Semestr3/OK/cmake-build-debug/PCmax_GeneticAlgorithm" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/dominik/Studia/Semestr3/OK/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/dominik/Studia/Semestr3/OK/."/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dominik/Studia/Semestr3/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 PCmax_GeneticAlgorithm/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dominik/Studia/Semestr3/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dominik/Studia/Semestr3/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dominik/Studia/Semestr3/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/dominik/Studia/Semestr3/OK/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/dominik/Studia/Semestr3/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dominik/Studia/Semestr3/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/dominik/Studia/Semestr3/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dominik/Studia/Semestr3/OK/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Algorithms/AbstractAlgorithm.cpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Algorithms/AbstractAlgorithm.hpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Algorithms/DataTypes/Individual.cpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Algorithms/DataTypes/Individual.hpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Algorithms/DataTypes/Result.cpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Algorithms/DataTypes/Result.hpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Algorithms/GeneticAlgorithm.cpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Algorithms/GeneticAlgorithm.hpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Algorithms/Greedy.cpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Algorithms/Greedy.hpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Algorithms/LPTF.cpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Algorithms/LPTF.hpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Domain/Building/BuildingInstance.hpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Domain/Building/GeneratingInstance.cpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Domain/Building/GeneratingInstance.hpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Domain/Building/LoadingInstance.cpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Domain/Building/LoadingInstance.hpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Domain/Core.cpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Domain/Core.hpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Domain/Instance.cpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Domain/Instance.hpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Domain/Task.cpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Domain/Task.hpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/Utility.hpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/SourceCode/main.cpp">
+			<Option target="PCmax_GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/home/dominik/Studia/Semestr3/OK/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

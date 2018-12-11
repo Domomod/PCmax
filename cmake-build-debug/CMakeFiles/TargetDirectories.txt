@@ -1,0 +1,3 @@
+/home/dominik/Studia/Semestr3/OK/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/dominik/Studia/Semestr3/OK/cmake-build-debug/CMakeFiles/PCmax_GeneticAlgorithm.dir
+/home/dominik/Studia/Semestr3/OK/cmake-build-debug/CMakeFiles/edit_cache.dir
