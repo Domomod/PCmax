@@ -6,7 +6,7 @@
 //  Copyright © 2018 Julia. All rights reserved.
 //
 
-#include "Greedy.h"
+#include "Greedy.hpp"
 
 void Greedy::operator()(Instance& Ins, Result& Res){
 	//Prepare instace for processing, aka. clear previous Result

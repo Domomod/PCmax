@@ -1,7 +1,7 @@
 #ifndef LPTF_H
 #define LPTF_H
 
-#include "Greedy.h"
+#include "Greedy.hpp"
 #include <algorithm>
 
 /*

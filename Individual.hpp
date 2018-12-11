@@ -6,7 +6,7 @@
 #include <iostream>
 	using std::ostream;
 
-#include "Result.h" 
+#include "Result.hpp"
 
 class Individual{
 private:

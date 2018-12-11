@@ -10,10 +10,10 @@
 #define Greedy_hpp
 
 #include <stdio.h>
-#include "Core.h"
-#include "Result.h"
-#include "Instance.h"
-#include "AbstractAlgorithm.h"
+#include "Core.hpp"
+#include "Result.hpp"
+#include "Instance.hpp"
+#include "AbstractAlgorithm.hpp"
 class Greedy : public AbstractAlgorithm{
 private:
 protected:

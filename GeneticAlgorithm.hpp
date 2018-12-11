@@ -3,8 +3,8 @@
 #ifndef GENETIC_ALGORITHM
 #define GENETIC_ALGORITHM
 
-#include "AbstractAlgorithm.h"
-#include "Individual.h"
+#include "AbstractAlgorithm.hpp"
+#include "Individual.hpp"
 
 #include <memory>
 

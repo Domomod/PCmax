@@ -4,9 +4,9 @@
 #include <cstdlib>
 #include <algorithm>
 
-#include "BuildingInstance.h"
-#include "Instance.h"
-#include "Task.h"
+#include "BuildingInstance.hpp"
+#include "Instance.hpp"
+#include "Task.hpp"
 
 /*
 Functor overwrites a given Instance, with a new randomly generated Instance. Previous Instance (if there was any) is erased.

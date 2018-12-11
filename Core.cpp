@@ -6,10 +6,10 @@
 //  Copyright © 2018 Julia. All rights reserved.
 //
 
-#include "Core.h"
+#include "Core.hpp"
 #include <iostream>
-#include "Task.h"
-#include "Utility.h"
+#include "Task.hpp"
+#include "Utility.hpp"
 
 void Core::showyourself(){
     std::cout<<CurrentProcessingTime<<" [units of time] were used for "<<MyTasks;

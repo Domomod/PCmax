@@ -1,5 +1,5 @@
-#include "Instance.h"
-#include "Utility.h"
+#include "Instance.hpp"
+#include "Utility.hpp"
 
 void Instance::addTask(Task newTask){
 	tasks.push_back(newTask);

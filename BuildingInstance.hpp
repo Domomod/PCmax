@@ -1,7 +1,7 @@
 #ifndef BUILDING_INSTANCE_H
 #define BUILDING_INSTANCE_H
 
-#include "Instance.h"
+#include "Instance.hpp"
 
 class BuildingInstance {
 private:

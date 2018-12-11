@@ -1,5 +1,5 @@
-#include "Individual.h"
-#include "Utility.h"
+#include "Individual.hpp"
+#include "Utility.hpp"
 
 #include <cstdlib>
 	using std::rand;

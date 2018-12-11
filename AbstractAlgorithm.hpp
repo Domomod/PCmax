@@ -1,8 +1,8 @@
 #ifndef ABSTRACTALGORITHM_H
 #define ABSTRACTALGORITHM_H
 
-#include "Instance.h"
-#include "Result.h"
+#include "Instance.hpp"
+#include "Result.hpp"
 
 class AbstractAlgorithm{
 private:

@@ -1,4 +1,4 @@
-#include "GeneratingInstance.h"
+#include "GeneratingInstance.hpp"
 
 void GeneratingInstance::Build(Instance& instance){
 	int numberOfCores = rand() % 97 + 3;

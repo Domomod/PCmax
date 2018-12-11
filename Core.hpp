@@ -11,7 +11,7 @@
 
 #include <iostream>
 #include <vector>
-#include "Task.h"
+#include "Task.hpp"
 
 /*
 A Core stores it's processing time and vector of Tasks

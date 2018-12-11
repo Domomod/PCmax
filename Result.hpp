@@ -1,8 +1,8 @@
 #ifndef RESULT_H
 #define RESULT_H
 
-#include "Core.h"
-#include "Instance.h"
+#include "Core.hpp"
+#include "Instance.hpp"
 #include <vector>
 	using std::vector;
 #include <algorithm>

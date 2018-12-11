@@ -1,4 +1,4 @@
-#include "LPTF.h"
+#include "LPTF.hpp"
 
 void LongestProcessingTimeFirst::operator()(Instance& Ins, Result& Res){
 	//we will manipulate our Instance, so it's better to work on a copy

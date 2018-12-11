@@ -1,4 +1,4 @@
-#include "LoadingInstance.h"
+#include "LoadingInstance.hpp"
 
 void LoadingInstance::Build(Instance& instance){
 	int numerOfTaks;

@@ -1,7 +1,7 @@
-#include "GeneticAlgorithm.h"
+#include "GeneticAlgorithm.hpp"
 
-#include "Greedy.h"
-#include "LPTF.h"
+#include "Greedy.hpp"
+#include "LPTF.hpp"
 
 #include <chrono>
 	using namespace std::chrono;

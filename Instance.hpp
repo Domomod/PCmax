@@ -4,7 +4,7 @@
 #include <vector>
 #include <iostream>
 	using std::ostream;
-#include "Task.h"
+#include "Task.hpp"
 
 /*
 This class represents an Instace of PCmax problem. Tasks are stored in a vector. Class is befriended with other classes resposible for it processing.

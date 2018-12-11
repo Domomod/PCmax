@@ -14,14 +14,14 @@
 #include <ctime>
 #include <vector>
 
-#include "Instance.h"
-#include "LoadingInstance.h"
-#include "GeneratingInstance.h"
-#include "Core.h"
-#include "Result.h"
+#include "Instance.hpp"
+#include "LoadingInstance.hpp"
+#include "GeneratingInstance.hpp"
+#include "Core.hpp"
+#include "Result.hpp"
 
-#include "Greedy.h"
-#include "GeneticAlgorithm.h"
+#include "Greedy.hpp"
+#include "GeneticAlgorithm.hpp"
 
 int main(){
 	//Seed for srand

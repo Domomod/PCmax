@@ -1,4 +1,4 @@
-#include "Result.h"
+#include "Result.hpp"
 
 void Result::Clear(){
 	if(!Cores.empty())

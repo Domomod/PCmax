@@ -1,9 +1,9 @@
 #ifndef LOADING_INSTANCE_H
 #define LOADING_INSTANCE_H
 
-#include "Task.h"
-#include "Instance.h"
-#include "BuildingInstance.h"
+#include "Task.hpp"
+#include "Instance.hpp"
+#include "BuildingInstance.hpp"
 
 #include <iostream>
 	using std::istream;
