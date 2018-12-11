@@ -10,6 +10,7 @@
 #define Greedy_hpp
 
 #include <stdio.h>
+#include <memory>
 #include "SourceCode/Domain/Core.hpp"
 #include "SourceCode/Algorithms/DataTypes/Result.hpp"
 #include "SourceCode/Domain/Instance.hpp"
@@ -21,7 +22,7 @@ public:
     Greedy()=default;
     virtual ~Greedy(){};
 
-    void operator()(Instance&, Result&);
+    void operator()(std::shared_ptr<Instance> instance, Result &result);
 };
 
 

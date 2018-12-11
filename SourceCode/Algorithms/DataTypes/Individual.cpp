@@ -25,7 +25,7 @@ Individual::Individual(Result& result){
 
 Individual Individual::makeOffspring(Individual& mother){
 	Individual* individuals[2] = {this, &mother};
-	Individual offspring;
+	Individual offspring(this->usedInstance);
 
 	int numerOfTaks = coresAsignedToTasks.size();
 	int startToUseOtherIndividualIdx = rand()%numerOfTaks;
@@ -50,8 +50,10 @@ Individual Individual::makeOffspring(Individual& mother){
 	return offspring;
 }
 
-Individual Individual::makeRandom(int numberOfTasks, int numerOfCores){
-	Individual outcome(numberOfTasks);
+Individual Individual::makeRandom(std::shared_ptr<Instance> instance){
+	int numberOfTasks = instance->getNumTasks();
+	int numerOfCores = instance->getNumProcessors();
+	Individual outcome(instance, numberOfTasks);
 	for(int i = 0; i < numberOfTasks; i++){
 		int randomCore = rand() % numerOfCores;
 		outcome.coresAsignedToTasks.at(i) = randomCore;
@@ -62,18 +64,18 @@ Individual Individual::makeRandom(int numberOfTasks, int numerOfCores){
 void Individual::mutate(){
 	int numberOfTasks = coresAsignedToTasks.size();
 	for(int i = 0; i < rand() % (int)(numberOfTasks/8); i++){
-	int a = rand() % numberOfTasks;
-	int b = rand() % numberOfTasks;
-	std::swap( coresAsignedToTasks[a], coresAsignedToTasks[b] );
+		int a = rand() % numberOfTasks;
+		int b = rand() % numberOfTasks;
+		std::swap( coresAsignedToTasks[a], coresAsignedToTasks[b] );
 	}
 }
 
-int Individual::valueFunction(Instance& myInstance){
-	vector<int> Cores(myInstance.getNumProcessors(),0);
+int Individual::valueFunction(std::shared_ptr<Instance> myInstance){
+	vector<int> Cores(myInstance->getNumProcessors(),0);
 	int i = 0;
 	int maxSoFar = 0;
 	for(auto task : coresAsignedToTasks){
-		Cores[task] += myInstance.getNthTaskLength(i);
+		Cores[task] += myInstance->getNthTaskLength(i);
 		maxSoFar = max(maxSoFar,Cores[task]);
 		i++;
 	}

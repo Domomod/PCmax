@@ -18,11 +18,11 @@ public:
 	GeneticAlgorithm(): destinatedPopulationSize(100){};
 	virtual ~GeneticAlgorithm(){};
 
-	void operator()(Instance&, Result&);
-	void initializePopulation(Instance& instance);
+	void operator()(std::shared_ptr<Instance> instance, Result &result);
+	void initializePopulation(std::shared_ptr<Instance> instance);
 	void selectBreedingMaterial();
 	void breedNewPopulation();
-	int returnBestTime(Instance& instance);
+	int returnBestTime(std::shared_ptr<Instance> instance);
 
 	GeneticAlgorithm& setPopulationSize(int x);
 };

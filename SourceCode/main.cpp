@@ -27,7 +27,7 @@ int main(){
 	//Seed for srand
 	srand( time (NULL) );
 	//Create needed objects
-    Instance instance;
+	auto instance = std::make_shared<Instance>( Instance() );
 	Result result;
 	Greedy lptf;
     LoadingInstance loadInstance;
@@ -38,8 +38,8 @@ int main(){
 
 	//Load data
 	loadInstance.SetSource(m50n1000);
-	loadInstance.Build(instance);
-   	std::cout << instance;
+	loadInstance.Build(*instance);
+   	std::cout << *instance;
 
 	//lptf(instance, result);
 	//result.showyourself();

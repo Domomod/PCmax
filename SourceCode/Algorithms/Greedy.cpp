@@ -8,14 +8,14 @@
 
 #include "Greedy.hpp"
 
-void Greedy::operator()(Instance& Ins, Result& Res){
+void Greedy::operator()(std::shared_ptr<Instance> instance, Result &result) {
 	//Prepare instace for processing, aka. clear previous Result
-	Res.PrepareForInstance(Ins);
+	result.PrepareForInstance(instance);
 
 	//Load task to least overworked Core
-    for (int i=0; i<Ins.getNumTasks(); i++)
-    	Res.findshortest(Ins).addtask(Ins.tasks[i]);
+    for (int i=0; i<instance->getNumTasks(); i++)
+		result.findshortest().addtask(instance->tasks[i]);
 
-	Res.calcmax();
-	Res.numerOfTasks = Ins.getNumTasks();
+	result.calcmax();
+	result.numerOfTasks = instance->getNumTasks();
 }

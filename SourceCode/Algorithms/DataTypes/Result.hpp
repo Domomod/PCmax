@@ -6,6 +6,7 @@
 #include <vector>
 	using std::vector;
 #include <algorithm>
+#include <memory>
 
 class Result{
 	friend class Greedy;
@@ -21,8 +22,8 @@ public:
 
 	void Clear();
 	void Resize(int n);
-	void PrepareForInstance(Instance&);
-	Core& findshortest(Instance&);
+	void PrepareForInstance(std::shared_ptr <Instance> instance);
+	Core &findshortest();
 	void calcmax();
 	void showyourself();
 

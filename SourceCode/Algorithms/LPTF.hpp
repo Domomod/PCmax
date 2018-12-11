@@ -3,6 +3,7 @@
 
 #include "Greedy.hpp"
 #include <algorithm>
+#include <memory>
 
 /*
 An algorithm based on Greedy Algorithm, the only diffrence is that it ensures, Tasks are assigned size descending.
@@ -15,7 +16,7 @@ public:
 	LongestProcessingTimeFirst()=default;
 	virtual ~LongestProcessingTimeFirst(){};
 
-	void operator()(Instance&, Result&);
+	void operator()(std::shared_ptr<Instance> instance, Result &result);
 };
 
 #endif

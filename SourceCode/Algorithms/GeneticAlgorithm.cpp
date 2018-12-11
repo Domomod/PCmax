@@ -14,7 +14,7 @@
 	using std::swap;
 
 
-void GeneticAlgorithm::operator()(Instance& instance, Result& result){
+void GeneticAlgorithm::operator()(std::shared_ptr<Instance> instance, Result &result) {
 	auto start = high_resolution_clock::now();
 	auto end = start + seconds(5);
 
@@ -56,11 +56,11 @@ void GeneticAlgorithm::operator()(Instance& instance, Result& result){
 }	
 
 
-void GeneticAlgorithm::initializePopulation(Instance& instance){
+void GeneticAlgorithm::initializePopulation(std::shared_ptr<Instance> instance){
 	population = make_shared<vector<Individual>>();
 
 	for(int i = 0; i < destinatedPopulationSize-2; i++){
-		population->push_back(Individual::makeRandom(instance.getNumTasks(), instance.getNumProcessors()));
+		population->push_back(Individual::makeRandom(instance));
 	}
 
 	Result result;
@@ -73,7 +73,7 @@ void GeneticAlgorithm::initializePopulation(Instance& instance){
 }
 
 
-int GeneticAlgorithm::returnBestTime(Instance& instance){
+int GeneticAlgorithm::returnBestTime(std::shared_ptr<Instance> instance){
 	int vauleOfBestSoFar = population->at(0).valueFunction(instance);
 	for(auto& individual: *population){
 		int valueOfIndividual = individual.valueFunction(instance);

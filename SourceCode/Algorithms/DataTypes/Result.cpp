@@ -10,15 +10,15 @@ void Result::Resize(int n){
 	Cores.resize(n, Core());
 }
 
-void Result::PrepareForInstance(Instance& Ins){
+void Result::PrepareForInstance(std::shared_ptr <Instance> instance){
 	//Clear content if *this was already processed, vector actual capacity might not change
 	Clear();
 	
 	//Set vector actual capacity to be able to store all Cores
-	Resize(Ins.getNumProcessors());
+	Resize(instance->getNumProcessors());
 };
 
-Core& Result::findshortest(Instance& Ins){
+Core & Result::findshortest() {
 	return *std::min_element(Cores.begin(), Cores.end(), [](Core& a,Core& b){ return a.gettime() < b.gettime();});
 };
 
