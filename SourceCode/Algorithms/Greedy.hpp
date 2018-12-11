@@ -22,7 +22,7 @@ public:
     Greedy()=default;
     virtual ~Greedy(){};
 
-    void operator()(std::shared_ptr<Instance> instance, Result &result);
+    Result operator()(std::shared_ptr<Instance> instance);
 };
 
 

@@ -16,7 +16,7 @@ public:
 	LongestProcessingTimeFirst()=default;
 	virtual ~LongestProcessingTimeFirst(){};
 
-	void operator()(std::shared_ptr<Instance> instance, Result &result);
+	Result operator()(std::shared_ptr<Instance> instance);
 };
 
 #endif

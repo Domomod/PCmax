@@ -6,15 +6,11 @@
 #include <chrono>
 	using namespace std::chrono;
 #include <memory>
-	using std::make_shared;
 #include <vector>
-	using std::vector;
 #include <algorithm>
-	using std::min;
-	using std::swap;
 
 
-void GeneticAlgorithm::operator()(std::shared_ptr<Instance> instance, Result &result) {
+Result GeneticAlgorithm::operator()(std::shared_ptr<Instance> instance) {
 	auto start = high_resolution_clock::now();
 	auto end = start + seconds(5);
 
@@ -23,7 +19,7 @@ void GeneticAlgorithm::operator()(std::shared_ptr<Instance> instance, Result &re
 	while(high_resolution_clock::now() < end){
 		std::sort(population->begin(), population->end(), [&instance](Individual& a, Individual& b) { return a.valueFunction(instance) < b.valueFunction(instance); } );
 
-		std::shared_ptr<std::vector<Individual>> newPopulation = make_shared<vector<Individual>>();
+		std::shared_ptr<std::vector<Individual>> newPopulation = std::make_shared<vector<Individual>>();
 		int rewriteToNextPopulationCount = 20;
 		
 		if(rewriteToNextPopulationCount > population->size()) throw std::string("Wanted to rewrite more individuals to next population that there is individuals");
@@ -51,35 +47,38 @@ void GeneticAlgorithm::operator()(std::shared_ptr<Instance> instance, Result &re
 
 		population.swap(newPopulation);
 	}
-
-	std::cout << returnBestTime(instance) << "\n";
+	return (Result)returnBestIndividual(instance);
 }	
 
 
 void GeneticAlgorithm::initializePopulation(std::shared_ptr<Instance> instance){
-	population = make_shared<vector<Individual>>();
+	population = std::make_shared<vector<Individual>>();
 
 	for(int i = 0; i < destinatedPopulationSize-2; i++){
 		population->push_back(Individual::makeRandom(instance));
 	}
 
-	Result result(instance);
 	LongestProcessingTimeFirst lptf;
 	Greedy greedy;
-	lptf(instance, result);
-	population->push_back( (Individual)result );
-	greedy(instance, result);
-	population->push_back( (Individual)result );
+	auto lptfResult = lptf(instance);
+	population->push_back( (Individual)lptfResult );
+	auto greedyResult = greedy(instance);
+	population->push_back( (Individual)greedyResult );
 }
 
 
-int GeneticAlgorithm::returnBestTime(std::shared_ptr<Instance> instance){
+Individual & GeneticAlgorithm::returnBestIndividual(std::shared_ptr<Instance> instance){
 	int vauleOfBestSoFar = population->at(0).valueFunction(instance);
+	Individual *bestSoFar = &(population->at(0));
+
 	for(auto& individual: *population){
 		int valueOfIndividual = individual.valueFunction(instance);
-		vauleOfBestSoFar = min(vauleOfBestSoFar, valueOfIndividual);
+		if(valueOfIndividual < vauleOfBestSoFar){
+			vauleOfBestSoFar = valueOfIndividual;
+			bestSoFar = &individual;
+		}
 	}
-	return vauleOfBestSoFar;
+	return *bestSoFar;
 }
 
 

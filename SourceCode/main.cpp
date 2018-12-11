@@ -10,7 +10,6 @@
 #include <iostream>
 #include <fstream>
 #include <cstdlib>
-	using std::rand;
 #include <ctime>
 #include <vector>
 
@@ -18,16 +17,14 @@
 #include "Domain/Building/LoadingInstance.hpp"
 #include "Domain/Building/GeneratingInstance.hpp"
 #include "Domain/Core.hpp"
-#include "Algorithms/DataTypes/Result.hpp"
 
-#include "Algorithms/Greedy.hpp"
+#include "Algorithms/DataTypes/Result.hpp"
 #include "Algorithms/GeneticAlgorithm.hpp"
 
 int main(){
 	//Seed for srand
 	srand( time (NULL) );
 	//Create needed objects
-	Greedy lptf;
     LoadingInstance loadInstance;
 
 	GeneticAlgorithm geneticAlgorithm;
@@ -41,21 +38,8 @@ int main(){
 	loadInstance.Build(*instance);
    	std::cout << *instance;
 
-	Result result(instance);
-
-	lptf(instance, result);
-
+	auto result = geneticAlgorithm(instance);
 	result.showyourself();
-
-	Individual test1 = (Individual) result;
-
-	Result result2 = (Result) test1;
-
-	result2.showyourself();
-
-	geneticAlgorithm(instance, result);
 
     return 0;
 }
-
-

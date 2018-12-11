@@ -12,7 +12,7 @@ public:
 	AbstractAlgorithm()=default;
 	virtual ~AbstractAlgorithm(){};
 
-	virtual void operator()(std::shared_ptr<Instance> instance, Result &result) =0;
+	virtual Result operator()(std::shared_ptr<Instance> instance) =0;
 };
 
 #endif
