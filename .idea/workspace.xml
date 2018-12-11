@@ -188,12 +188,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.PCmax_GeneticAlgorithm">
     <configuration name="OK" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="OK" TARGET_NAME="OK" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="OK" RUN_TARGET_NAME="OK">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PCmax_GeneticAlgorithm" type="CMakeRunConfiguration" factoryName="Application" temporary="true" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PCmax_GeneticAlgorithm" TARGET_NAME="PCmax_GeneticAlgorithm" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="PCmax_GeneticAlgorithm" RUN_TARGET_NAME="PCmax_GeneticAlgorithm">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.OK" />
+      <item itemvalue="Application.PCmax_GeneticAlgorithm" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.PCmax_GeneticAlgorithm" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
