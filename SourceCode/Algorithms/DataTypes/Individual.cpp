@@ -9,6 +9,15 @@
 	using std::max;
 	using std::min;
 
+Individual::Individual(int size){
+	coresAsignedToTasks.resize(size);
+}
+
+Individual::Individual(std::shared_ptr<Instance> instance, unsigned long size){
+coresAsignedToTasks.resize(size);
+usedInstance = std::move(instance);
+}
+
 Individual::Individual(Result& result){
 	usedInstance = result.getUsedInstance();
 	int numberOfTasks = result.getNumberOfTasks();

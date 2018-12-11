@@ -15,17 +15,9 @@ private:
 	std::shared_ptr<Instance> usedInstance;
 protected:
 public:
-	Individual(int size=0){
-		coresAsignedToTasks.resize(size);
-	}
-
-	explicit Individual(std::shared_ptr<Instance> instance, unsigned long size=0){
-		coresAsignedToTasks.resize(size);
-		usedInstance = std::move(instance);
-	}
-
-	//TODO: actualize this constructor
-	Individual(Result& result);
+	explicit Individual(int size=0);
+	explicit Individual(std::shared_ptr<Instance> instance, unsigned long size=0);
+	explicit Individual(Result& result);
 
 	Individual makeOffspring(Individual& mother);
 	static Individual makeRandom(std::shared_ptr<Instance> instance);
