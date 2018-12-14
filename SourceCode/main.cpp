@@ -27,18 +27,27 @@ int main(){
 	//Create needed objects
     LoadingInstance loadInstance;
 
-	GeneticAlgorithm geneticAlgorithm;
 
-	std::ifstream m50n1000("Instances/m50");
+	std::ifstream m50("Instances/m50");
+
 
 	auto instance = std::make_shared<Instance>( Instance() );
 
 	//Load data
-	loadInstance.SetSource(m50n1000);
+	loadInstance.SetSource(m50);
 	loadInstance.Build(*instance);
    	std::cout << *instance;
 
+	GeneticAlgorithm geneticAlgorithm;
+	geneticAlgorithm
+			.setDueTimeInSeconds(15)
+			.setStartingPopulationSize(1000)
+			.setIndivudualsAmountPassedToNextGeneration(100)
+			.setX_CrossoversInN_Tries(7,10)
+			.setX_MutationsInN_Tries(1,40);
+
 	auto result = geneticAlgorithm(instance);
+
 	result.showyourself();
 
     return 0;

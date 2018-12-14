@@ -45,3 +45,7 @@ void Result::showyourself(){
 		core.showyourself();
 	std::cout<<"Total time: "<<longestProcessingTime<<"\n";
 };
+
+void Result::showOnlyTime(){
+	std::cout<<"Total time: "<<longestProcessingTime<<"\n";
+};

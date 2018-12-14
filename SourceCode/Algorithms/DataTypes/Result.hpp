@@ -32,8 +32,10 @@ public:
 	Core &findshortest();
 	void calcmax();
 	void showyourself();
+	void showOnlyTime();
 
-	int getMax () const { return longestProcessingTime; }
+
+		int getMax () const { return longestProcessingTime; }
 	int getNumberOfTasks () const { return numberOfTasks; }
 
 	std::shared_ptr<Instance> getUsedInstance() const {

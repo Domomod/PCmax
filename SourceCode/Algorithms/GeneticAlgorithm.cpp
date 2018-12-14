@@ -12,7 +12,7 @@
 
 Result GeneticAlgorithm::operator()(std::shared_ptr<Instance> instance) {
 	auto start = high_resolution_clock::now();
-	auto end = start + seconds(5);
+	auto end = start + dueTime;
 
 	initializePopulation(instance);
 
@@ -20,11 +20,10 @@ Result GeneticAlgorithm::operator()(std::shared_ptr<Instance> instance) {
 		std::sort(population->begin(), population->end(), [&instance](Individual& a, Individual& b) { return a.valueFunction(instance) < b.valueFunction(instance); } );
 
 		std::shared_ptr<std::vector<Individual>> newPopulation = std::make_shared<vector<Individual>>();
-		int rewriteToNextPopulationCount = 20;
-		
-		if(rewriteToNextPopulationCount > population->size()) throw std::string("Wanted to rewrite more individuals to next population that there is individuals");
 
-		for(int i = 0; i < rewriteToNextPopulationCount; i++){
+		if(rewriteToNextGenerationAmount > population->size()) throw std::string("Wanted to rewrite more individuals to next population that there is individuals");
+
+		for(int i = 0; i < rewriteToNextGenerationAmount; i++){
 			newPopulation->push_back(population->at(i));
 		}
 
@@ -32,7 +31,7 @@ Result GeneticAlgorithm::operator()(std::shared_ptr<Instance> instance) {
 		for(int i = 0; i < startingSize; i++){
 			Individual father = newPopulation->at(i);
 			for(int j = 0; j < startingSize; j++){
-				if(i != j){
+				if(i != j && mutationChance.didSucced()){
 					Individual& mother = newPopulation->at(j);
 					Individual child = father.makeOffspring(mother);
 					newPopulation->push_back(child);
@@ -40,8 +39,9 @@ Result GeneticAlgorithm::operator()(std::shared_ptr<Instance> instance) {
 			}
 		}
 
+
 		for(Individual ind : *newPopulation){
-			if(rand()%2 == 0)
+			if(mutationChance.didSucced());
 				ind.mutate();
 		}
 
@@ -54,7 +54,7 @@ Result GeneticAlgorithm::operator()(std::shared_ptr<Instance> instance) {
 void GeneticAlgorithm::initializePopulation(std::shared_ptr<Instance> instance){
 	population = std::make_shared<vector<Individual>>();
 
-	for(int i = 0; i < destinatedPopulationSize-2; i++){
+	for(int i = 0; i < startingPopulationSize-2; i++){
 		population->push_back(Individual::makeRandom(instance));
 	}
 
@@ -81,9 +81,33 @@ Individual & GeneticAlgorithm::returnBestIndividual(std::shared_ptr<Instance> in
 	return *bestSoFar;
 }
 
-
-GeneticAlgorithm& GeneticAlgorithm::setPopulationSize(int x){ 
+GeneticAlgorithm& GeneticAlgorithm::setDueTimeInSeconds(int x){
 	if(x<2) throw std::string("Population size too small");
-		destinatedPopulationSize = x;
+		dueTime = std::chrono::seconds(x);
+	return *this;
+}
+
+
+GeneticAlgorithm& GeneticAlgorithm::setStartingPopulationSize(int x){
+	if(x<2) throw std::string("Population size too small");
+		startingPopulationSize = x;
+	return *this;
+}
+
+GeneticAlgorithm& GeneticAlgorithm::setIndivudualsAmountPassedToNextGeneration(int x){
+	if(x<2) throw std::string("Population size too small");
+		rewriteToNextGenerationAmount = x;
+	return *this;
+}
+
+
+GeneticAlgorithm& GeneticAlgorithm::setX_MutationsInN_Tries(int x, int n){
+	mutationChance.succeses = x;
+	mutationChance.tries = n;
+	return *this;
+}
+GeneticAlgorithm& GeneticAlgorithm::setX_CrossoversInN_Tries(int x, int n){
+	crossoverChance.succeses = x;
+	crossoverChance.tries = n;
 	return *this;
 }
