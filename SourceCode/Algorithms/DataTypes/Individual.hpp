@@ -20,11 +20,24 @@ public:
 	explicit Individual(Result& result);
 
 	Individual makeOffspring(Individual& mother);
+	Individual makeOffspring2(Individual& mother);
 	static Individual makeRandom(std::shared_ptr<Instance> instance);
 
-	void mutate();
+	void mutate(int maxMutations);
 
 	int valueFunction(std::shared_ptr<Instance> myInstance);
+	int valueFunction(std::vector<int>::iterator begin, std::vector<int>::iterator end, int numCores){
+		vector<int> Cores(numCores, 0);
+		int i = 0;
+		int maxSoFar = 0;
+		for(auto position = begin; position < end; position++){
+			Cores[*position] += usedInstance->getNthTaskLength(i);
+			maxSoFar = std::max(maxSoFar,Cores[*position]);
+			i++;
+		}
+		return maxSoFar;
+	}
+
 
 	friend ostream& operator<<(ostream& out, Individual individual);
 

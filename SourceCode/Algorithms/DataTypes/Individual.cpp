@@ -5,6 +5,8 @@
 	using std::rand;
 #include <vector>
 	using std::vector;
+#include <stack>
+	using std::stack;
 #include <algorithm>
 	using std::max;
 	using std::min;
@@ -45,6 +47,7 @@ Individual Individual::makeOffspring(Individual& mother){
 	fromFatherCount = endToUseOtherIndividualIdx - startToUseOtherIndividualIdx;
 
 
+
 	for(int i = 0; i < coresAsignedToTasks.size(); i++){
 		int randomnum=rand()%2;
 		if((randomnum==1 && fromFatherCount>0)||fromMotherCount==0){
@@ -60,6 +63,55 @@ Individual Individual::makeOffspring(Individual& mother){
 	return offspring;
 }
 
+Individual Individual::makeOffspring2(Individual& mother){
+	Individual* individuals[2] = {this, &mother};
+	Individual offspring(this->usedInstance);
+
+	int numerOfTaks = coresAsignedToTasks.size();
+
+	std::stack<int> changeSourceAt;
+	int nextChangingPoint;
+	int largestPoint = numerOfTaks;
+	for(int i = 0; i < 10; i++){
+		int point = largestPoint - (rand() % largestPoint);
+		largestPoint = point;
+		if(largestPoint <= 0) break;
+		changeSourceAt.push(point);
+	}
+
+	bool fromFather = (bool) rand() % 2;
+	nextChangingPoint = changeSourceAt.top();
+	changeSourceAt.pop();
+    int previousChangingPoint = 0;
+
+
+	for(int i = 0; i < coresAsignedToTasks.size(); i++){
+		if (i >= nextChangingPoint) {
+			if(!changeSourceAt.empty()) {
+			    previousChangingPoint = nextChangingPoint;
+				nextChangingPoint = changeSourceAt.top();
+				changeSourceAt.pop();
+			}
+		}
+
+		if(valueFunction(this->coresAsignedToTasks.begin() + previousChangingPoint, this->coresAsignedToTasks.begin() + nextChangingPoint, usedInstance->getNumProcessors()) <
+		    valueFunction(mother.coresAsignedToTasks.begin() + previousChangingPoint, mother.coresAsignedToTasks.begin() + nextChangingPoint, usedInstance->getNumProcessors()))
+		    fromFather = false;
+		else
+		    fromFather = true;
+
+		if(fromFather){
+			offspring.coresAsignedToTasks.push_back( this->coresAsignedToTasks.at(i) );
+		}
+		else{
+			offspring.coresAsignedToTasks.push_back( mother.coresAsignedToTasks.at(i) );
+		}
+	}
+
+	return offspring;
+}
+
+
 Individual Individual::makeRandom(std::shared_ptr<Instance> instance){
 	int numberOfTasks = instance->getNumTasks();
 	int numerOfCores = instance->getNumProcessors();
@@ -71,9 +123,9 @@ Individual Individual::makeRandom(std::shared_ptr<Instance> instance){
 	return outcome;
 }
 
-void Individual::mutate(){
+void Individual::mutate(int maxMutations){
 	int numberOfTasks = coresAsignedToTasks.size();
-	for(int i = 0; i < rand() % (int)(numberOfTasks/8); i++){
+	for(int i = 0; i < rand() %  maxMutations; i++){
 		int a = rand() % numberOfTasks;
 		int b = rand() % numberOfTasks;
 		std::swap( coresAsignedToTasks[a], coresAsignedToTasks[b] );

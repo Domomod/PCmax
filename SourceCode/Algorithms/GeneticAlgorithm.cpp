@@ -14,10 +14,22 @@ Result GeneticAlgorithm::operator()(std::shared_ptr<Instance> instance) {
 	auto start = high_resolution_clock::now();
 	auto end = start + dueTime;
 
+	int bestValueSoFar = -1;
+
 	initializePopulation(instance);
 
 	while(high_resolution_clock::now() < end){
-		std::sort(population->begin(), population->end(), [&instance](Individual& a, Individual& b) { return a.valueFunction(instance) < b.valueFunction(instance); } );
+		std::sort(population->begin(), population->end(), [&bestValueSoFar, &instance](Individual& a, Individual& b) {
+			int aValue = a.valueFunction(instance);
+			int bValue = b.valueFunction(instance);
+
+			if (bestValueSoFar == -1 || aValue < bestValueSoFar || bValue < bestValueSoFar) {
+				bestValueSoFar = std::min(aValue, bValue);
+			}
+
+
+			return aValue < bValue;
+		} );
 
 		std::shared_ptr<std::vector<Individual>> newPopulation = std::make_shared<vector<Individual>>();
 
@@ -33,20 +45,23 @@ Result GeneticAlgorithm::operator()(std::shared_ptr<Instance> instance) {
 			for(int j = 0; j < startingSize; j++){
 				if(i != j && mutationChance.didSucced()){
 					Individual& mother = newPopulation->at(j);
-					Individual child = father.makeOffspring(mother);
-					newPopulation->push_back(child);
+					Individual child1 = father.makeOffspring(mother);
+					Individual child2 = father.makeOffspring2(mother);
+					//newPopulation->push_back(child1);
+					//newPopulation->push_back(child2);
 				}
 			}
 		}
 
 
 		for(Individual ind : *newPopulation){
-			if(mutationChance.didSucced());
-				ind.mutate();
+			//if(mutationChance.didSucced())
+			//	ind.mutate(maxMutations);
 		}
 
 		population.swap(newPopulation);
 	}
+	std::cout << bestValueSoFar;
 	return (Result)returnBestIndividual(instance);
 }	
 
@@ -93,6 +108,11 @@ GeneticAlgorithm& GeneticAlgorithm::setStartingPopulationSize(int x){
 		startingPopulationSize = x;
 	return *this;
 }
+
+GeneticAlgorithm& GeneticAlgorithm::setMaxMutations(int x){
+	maxMutations = x;
+	return  *this;
+};
 
 GeneticAlgorithm& GeneticAlgorithm::setIndivudualsAmountPassedToNextGeneration(int x){
 	if(x<2) throw std::string("Population size too small");

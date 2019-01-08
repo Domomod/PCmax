@@ -12,6 +12,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <vector>
+#include <SourceCode/Algorithms/LPTF.hpp>
 
 #include "Domain/Instance.hpp"
 #include "Domain/Building/LoadingInstance.hpp"
@@ -21,6 +22,8 @@
 #include "Algorithms/DataTypes/Result.hpp"
 #include "Algorithms/GeneticAlgorithm.hpp"
 
+#include "Utility.hpp"
+
 int main(){
 	//Seed for srand
 	srand( time (NULL) );
@@ -28,27 +31,71 @@ int main(){
     LoadingInstance loadInstance;
 
 
-	std::ifstream m50("Instances/m50");
+	std::ifstream source50("Instances/m50");
+    std::ifstream source50n200("Instances/m50n200");
+    std::ifstream source50n1000("Instances/m50n1000");
+    std::ifstream source10n200("Instances/m10n200");
+    std::ifstream source25("Instances/m25");
 
 
-	auto instance = std::make_shared<Instance>( Instance() );
+	auto m50 = std::make_shared<Instance>( Instance() );
+    auto m50n200 = std::make_shared<Instance>( Instance() );
+    auto m50n1000 = std::make_shared<Instance>( Instance() );
+    auto m10n200 = std::make_shared<Instance>( Instance() );
+    auto m25 = std::make_shared<Instance>( Instance() );
+
 
 	//Load data
-	loadInstance.SetSource(m50);
-	loadInstance.Build(*instance);
-   	std::cout << *instance;
+	loadInstance.SetSource(source50);
+	loadInstance.Build(*m50);
+    loadInstance.SetSource(source50n200);
+    loadInstance.Build(*m50n200);
+    loadInstance.SetSource(source50n1000);
+    loadInstance.Build(*m50n1000);
+    loadInstance.SetSource(source10n200);
+    loadInstance.Build(*m10n200);
+    loadInstance.SetSource(source25);
+    loadInstance.Build(*m25);
+
 
 	GeneticAlgorithm geneticAlgorithm;
 	geneticAlgorithm
-			.setDueTimeInSeconds(15)
-			.setStartingPopulationSize(1000)
-			.setIndivudualsAmountPassedToNextGeneration(100)
-			.setX_CrossoversInN_Tries(7,10)
-			.setX_MutationsInN_Tries(1,40);
+			.setDueTimeInSeconds(5)
+			.setStartingPopulationSize(100)
+			.setIndivudualsAmountPassedToNextGeneration(20)
+			.setX_CrossoversInN_Tries(0,10)
+			.setX_MutationsInN_Tries(0,10)
+			.setMaxMutations(2);
 
-	auto result = geneticAlgorithm(instance);
 
-	result.showyourself();
+	//std::vector<int> test = {1, 5, 7, 10, 18, 36};
+	//std::sort(test.begin(), test.end(), [](int a, int b){ return a < b; });
+	//std::cout << test;
+
+	//std::cout << "\nm50\t";
+	//auto result1 = geneticAlgorithm(m50);
+	//std::cout << "\n";
+	//result1.showyourself();
+
+	std::cout << "\nm50n200\t";
+    auto result2 = geneticAlgorithm(m50n200);
+    std::cout << "\n";
+    result2.showyourself();
+
+    std::cout << "\nm50n1000\t";
+    auto result3 = geneticAlgorithm(m50n1000);
+    std::cout << "\n";
+    result3.showyourself();
+
+    std::cout << "\nm10n200\t";
+    auto result4 = geneticAlgorithm(m10n200);
+    std::cout << "\n";
+    result4.showyourself();
+
+    std::cout << "\nm25\t";
+    auto result5 = geneticAlgorithm(m25);
+    std::cout << "\n";
+    result5.showyourself();
 
     return 0;
 }

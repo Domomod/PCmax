@@ -41,8 +41,8 @@ void Result::calcmax(){
 };
 
 void Result::showyourself(){
-	for (auto core : Cores)
-		core.showyourself();
+	//for (auto core : Cores)
+	//	core.showyourself();
 	std::cout<<"Total time: "<<longestProcessingTime<<"\n";
 };
 

@@ -24,6 +24,7 @@ private:
 
 	std::chrono::seconds dueTime;
 
+	int maxMutations;
 	int startingPopulationSize;
 	int rewriteToNextGenerationAmount;
 protected:
@@ -39,6 +40,7 @@ public:
 
 	GeneticAlgorithm& setDueTimeInSeconds(int x);
 	GeneticAlgorithm& setStartingPopulationSize(int x);
+    GeneticAlgorithm& setMaxMutations(int x);
 	GeneticAlgorithm& setIndivudualsAmountPassedToNextGeneration(int x);
 	GeneticAlgorithm& setX_MutationsInN_Tries(int x, int n);
 	GeneticAlgorithm& setX_CrossoversInN_Tries(int x, int n);
