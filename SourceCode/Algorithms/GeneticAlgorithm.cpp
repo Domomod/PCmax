@@ -62,6 +62,13 @@ Result GeneticAlgorithm::operator()(std::shared_ptr<Instance> instance) {
 		population.swap(newPopulation);
 	}
 	std::cout << bestValueSoFar;
+
+	std::cout << "\n" << returnBestIndividual(instance).valueFunction(instance);
+	auto test1 = (Result)returnBestIndividual(instance);
+	auto test2 = (Individual)test1;
+	std::cout << "\n" << test2.valueFunction(instance);
+
+
 	return (Result)returnBestIndividual(instance);
 }	
 
@@ -96,6 +103,7 @@ Individual & GeneticAlgorithm::returnBestIndividual(std::shared_ptr<Instance> in
 	return *bestSoFar;
 }
 
+
 GeneticAlgorithm& GeneticAlgorithm::setDueTimeInSeconds(int x){
 	if(x<2) throw std::string("Population size too small");
 		dueTime = std::chrono::seconds(x);
@@ -109,10 +117,12 @@ GeneticAlgorithm& GeneticAlgorithm::setStartingPopulationSize(int x){
 	return *this;
 }
 
+
 GeneticAlgorithm& GeneticAlgorithm::setMaxMutations(int x){
 	maxMutations = x;
 	return  *this;
 };
+
 
 GeneticAlgorithm& GeneticAlgorithm::setIndivudualsAmountPassedToNextGeneration(int x){
 	if(x<2) throw std::string("Population size too small");
@@ -126,6 +136,8 @@ GeneticAlgorithm& GeneticAlgorithm::setX_MutationsInN_Tries(int x, int n){
 	mutationChance.tries = n;
 	return *this;
 }
+
+
 GeneticAlgorithm& GeneticAlgorithm::setX_CrossoversInN_Tries(int x, int n){
 	crossoverChance.succeses = x;
 	crossoverChance.tries = n;

@@ -57,45 +57,59 @@ int main(){
     loadInstance.SetSource(source25);
     loadInstance.Build(*m25);
 
-
 	GeneticAlgorithm geneticAlgorithm;
 	geneticAlgorithm
-			.setDueTimeInSeconds(5)
+			.setDueTimeInSeconds(3)
 			.setStartingPopulationSize(100)
-			.setIndivudualsAmountPassedToNextGeneration(20)
-			.setX_CrossoversInN_Tries(0,10)
-			.setX_MutationsInN_Tries(0,10)
+			.setIndivudualsAmountPassedToNextGeneration(10)
+			.setX_CrossoversInN_Tries(2,10)
+			.setX_MutationsInN_Tries(2,10)
 			.setMaxMutations(2);
 
-
-	//std::vector<int> test = {1, 5, 7, 10, 18, 36};
-	//std::sort(test.begin(), test.end(), [](int a, int b){ return a < b; });
-	//std::cout << test;
-
-	//std::cout << "\nm50\t";
-	//auto result1 = geneticAlgorithm(m50);
-	//std::cout << "\n";
-	//result1.showyourself();
-
-	std::cout << "\nm50n200\t";
+//	std::cout << "\nm50\t";
+//	auto result1 = geneticAlgorithm(m50);
+//	std::cout << "\n";
+//	result1.showyourself();
+//
+	std::cout << "\nm50n200\n";
     auto result2 = geneticAlgorithm(m50n200);
     std::cout << "\n";
+    result2.calcmax();
     result2.showyourself();
 
-    std::cout << "\nm50n1000\t";
-    auto result3 = geneticAlgorithm(m50n1000);
-    std::cout << "\n";
-    result3.showyourself();
+    auto test = (Individual)result2;
+//    std::cout << test.valueFunction(m50n200);
 
-    std::cout << "\nm10n200\t";
-    auto result4 = geneticAlgorithm(m10n200);
-    std::cout << "\n";
-    result4.showyourself();
-
-    std::cout << "\nm25\t";
-    auto result5 = geneticAlgorithm(m25);
-    std::cout << "\n";
-    result5.showyourself();
+//    std::cout << "\nm50n1000\t";
+//    auto result3 = geneticAlgorithm(m50n1000);
+//    std::cout << "\n";
+//    result3.showyourself();
+//
+//    std::cout << "\nm10n200\t";
+//    auto result4 = geneticAlgorithm(m10n200);
+//    std::cout << "\n";
+//    result4.showyourself();
+//
+//    std::cout << "\nm25\t";
+//    auto result5 = geneticAlgorithm(m25);
+//    std::cout << "\n";
+//    result5.showyourself();
 
     return 0;
+}
+
+void testValueFunction(){
+    LoadingInstance loadInstance;
+    std::ifstream source50("Instances/m50");
+
+    auto m50 = std::make_shared<Instance>( Instance() );
+
+    //Load data
+    loadInstance.SetSource(source50);
+    loadInstance.Build(*m50);
+
+    auto test = LongestProcessingTimeFirst()(m50);
+    test.showyourself();
+
+    auto test2 = (Individual)test;
 }

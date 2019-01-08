@@ -8,7 +8,7 @@ Result::Result(std::shared_ptr<Instance> instance):longestProcessingTime(0){
 	Resize(usedInstance->getNumProcessors());
 }
 
-Result::Result(Individual individual){
+Result::Result(Individual individual){ //TODO: TO NIE DZIAŁA
 	usedInstance = individual.getUsedInstance();
 	Resize(usedInstance->getNumProcessors());
 
@@ -36,6 +36,7 @@ Core & Result::findshortest() {
 };
 
 void Result::calcmax(){
+    longestProcessingTime = 0;
 	for (auto core : Cores)
 		longestProcessingTime=std::max(core.gettime(),longestProcessingTime);
 };
